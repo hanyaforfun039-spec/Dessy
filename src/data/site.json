@@ -1,0 +1,117 @@
+{
+  "brand": "OMODA | JAECOO Semarang",
+  "dealerName": "OMODA JAECOO Sun Semarang",
+  "salesName": "Dessy",
+  "whatsapp": "6282137375350",
+  "phoneDisplay": "0821-3737-5350",
+  "waDefault": "Halo, saya mau tanya tentang OMODA 04 EV di Semarang.",
+  "address": {
+    "street": "Jl. Madukoro Raya No. 45, Tawangsari, Kec. Semarang Barat",
+    "locality": "Semarang",
+    "region": "Jawa Tengah",
+    "postalCode": "50144",
+    "country": "ID"
+  },
+  "openingHours": [
+    {
+      "hari": "Senin - Sabtu",
+      "buka": "08:00",
+      "tutup": "17:00"
+    }
+  ],
+  "mapEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.401737235811!2d110.38903647454146!3d-6.96184546816202!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e70f500523d9d1d%3A0x58749a72235a7df7!2sJAECOO%20SEMARANG!5e0!3m2!1sid!2sid!4v1785789875955!5m2!1sid!2sid",
+  "social": {
+    "instagram": "https://www.instagram.com/omodajaecoosemarang_desy",
+    "tiktok": "https://www.tiktok.com/@jaecoosemarang.official"
+  },
+  "seo": {
+    "titleSuffix": "OMODA JAECOO Semarang",
+    "defaultDescription": "Showroom OMODA JAECOO Sun Semarang. Info harga, pre-order, dan test drive OMODA 04 EV bersama Dessy. Melayani Semarang dan kota-kota di Jawa Tengah.",
+    "locale": "id_ID",
+    "judulBeranda": "OMODA JAECOO Semarang - Pre-Order OMODA 04 EV",
+    "deskripsiBeranda": "Showroom OMODA JAECOO Sun Semarang. OMODA 04 EV: jangkauan 553 km NEDC, AI Smart Cockpit. Konsultasi dan pre-order bersama Dessy.",
+    "deskripsiTentang": "Mengenal merek OMODA dan showroom OMODA JAECOO Sun Semarang. Empat pilar merek, layanan, area yang dilayani, serta kontak Dessy.",
+    "modelPembuka": "di showroom OMODA JAECOO Sun Semarang.",
+    "modelPenutup": "Info harga dan proses pre-order bersama Dessy lewat WhatsApp."
+  },
+  "promoPopup": {
+    "aktif": true,
+    "gambar": "/banner-dessy.jpeg",
+    "lebar": 1254,
+    "tinggi": 1254,
+    "alt": "Pre-booking OMODA 04 EV bersama Dessy di OMODA JAECOO Sun Semarang. Hubungi 0821-3737-5350.",
+    "ctaLabel": "Ambil Benefit Pre-Order",
+    "ctaPesan": "Halo, saya mau ikut pre-order OMODA 04 EV dan masuk kuota 1.000 pertama. Boleh dibantu prosesnya?"
+  },
+  "floatingPromo": {
+    "aktif": true,
+    "gambar": "/banner-utama.jpeg",
+    "alt": "Pre-book OMODA 04 EV di GIIAS 2026.",
+    "ctaLabel": "Pre-Order Sekarang",
+    "ctaPesan": "Halo, saya mau pre-order OMODA 04 EV sekarang."
+  },
+  "areaLayanan": [
+    {
+      "kota": "Semarang",
+      "catatan": "Kota dealer. Test drive, pengecekan unit, dan serah terima langsung di showroom Madukoro."
+    },
+    {
+      "kota": "Ungaran",
+      "catatan": "Sekitar 30 menit dari dealer. Kunjungan sales ke rumah atau kantor atas permintaan."
+    },
+    {
+      "kota": "Kendal",
+      "catatan": "Sekitar 45 menit dari dealer. Pengiriman unit sampai alamat setelah administrasi selesai."
+    },
+    {
+      "kota": "Demak",
+      "catatan": "Sekitar 45 menit dari dealer. Konsultasi dan pengurusan dokumen dapat dilakukan jarak jauh."
+    },
+    {
+      "kota": "Salatiga",
+      "catatan": "Sekitar 1 jam dari dealer. Penjadwalan test drive menyesuaikan waktu kunjungan Anda."
+    },
+    {
+      "kota": "Kudus",
+      "catatan": "Sekitar 1,5 jam dari dealer. Pengiriman unit dan pendampingan administrasi tersedia."
+    },
+    {
+      "kota": "Surakarta (Solo)",
+      "catatan": "Sekitar 2 jam dari dealer. Melayani pemesanan luar kota dengan pengiriman sampai alamat."
+    },
+    {
+      "kota": "Magelang",
+      "catatan": "Sekitar 2 jam dari dealer. Konsultasi lewat WhatsApp, unit dikirim setelah unit siap."
+    },
+    {
+      "kota": "Pekalongan",
+      "catatan": "Sekitar 2 jam dari dealer. Pemesanan jarak jauh dengan pengiriman unit ke alamat."
+    },
+    {
+      "kota": "Pati",
+      "catatan": "Sekitar 2 jam dari dealer. Pendampingan proses dari pemesanan sampai serah terima."
+    }
+  ],
+  "faqUmum": [
+    {
+      "tanya": "Apa itu OMODA, dan apa hubungannya dengan JAECOO?",
+      "jawab": "Keduanya merek dalam satu grup dan dijual di showroom yang sama. OMODA menggarap crossover perkotaan berdesain futuristik, sedangkan JAECOO menggarap SUV bergaya petualang. Di Semarang keduanya ditangani OMODA JAECOO Sun Semarang."
+    },
+    {
+      "tanya": "Apa yang membuat OMODA 04 EV menarik?",
+      "jawab": "Jangkauan 553 km NEDC sekali pengisian, tenaga 218 PS dengan torsi 275 Nm, baterai LFP 65,05 kWh, layar sentuh 13,2 inci, kamera 540 derajat, dan 18 fitur ADAS. Semuanya dibungkus rancangan Cyber Mecha."
+    },
+    {
+      "tanya": "Bisakah mencoba mobilnya sebelum memutuskan?",
+      "jawab": "Bisa, lewat test drive dengan perjanjian agar unit disiapkan. Anda juga dipersilakan datang ke showroom untuk melihat kabin dan bertanya tanpa keharusan memesan."
+    },
+    {
+      "tanya": "Kota mana saja yang dilayani dari Semarang?",
+      "jawab": "Selain Semarang, kami melayani Ungaran, Kendal, Demak, Salatiga, Kudus, Solo, Magelang, Pekalongan, dan Pati. Untuk luar kota, dokumen diurus jarak jauh dan unit diantar sampai alamat."
+    },
+    {
+      "tanya": "Apakah harga OMODA 04 EV sudah bisa diketahui?",
+      "jawab": "Harga OTR resmi belum diumumkan dan akan keluar menjelang peluncuran. Hubungi Dessy lewat WhatsApp untuk masuk daftar penerima kabar pertama, sekaligus menanyakan sisa kuota benefit pre-order."
+    }
+  ]
+}
