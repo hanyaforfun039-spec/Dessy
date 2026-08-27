@@ -32,7 +32,11 @@ export interface Car {
     thumbnail: string;
     heroDesktop?: string;
     heroMobile?: string;
+    /* Dipakai halaman model situs dealer. Ada di data agar bentuknya seragam
+       di semua situs, walau situs sales tidak merendernya. */
+    galeri?: { src: string; alt: string; judul: string }[];
   };
+  warna?: { nama: string; kode: string }[];
   highlight: string[];
   /** Angka kunci yang dipamerkan sebagai deretan statistik di halaman model.
       Opsional — mobil tanpa data ini cukup melewatkannya, deretannya tidak
