@@ -32,7 +32,8 @@
     "deskripsiBeranda": "Showroom OMODA JAECOO Sun Semarang. OMODA 04 EV: jangkauan 553 km NEDC, AI Smart Cockpit. Konsultasi dan pre-order bersama Dessy.",
     "deskripsiTentang": "Mengenal merek OMODA dan showroom OMODA JAECOO Sun Semarang. Empat pilar merek, layanan, area yang dilayani, serta kontak Dessy.",
     "modelPembuka": "di showroom OMODA JAECOO Sun Semarang.",
-    "modelPenutup": "Info harga dan proses pre-order bersama Dessy lewat WhatsApp."
+    "modelPenutup": "Info harga dan proses pre-order bersama Dessy lewat WhatsApp.",
+    "ledeArea": "Unit display ada di Semarang, dan test drive bisa diatur untuk pembeli dari kota-kota sekitarnya. Berikut gambaran layanan di tiap kota yang paling sering kami datangi."
   },
   "promoPopup": {
     "aktif": true,
@@ -53,43 +54,43 @@
   "areaLayanan": [
     {
       "kota": "Semarang",
-      "catatan": "Kota dealer. Test drive, pengecekan unit, dan serah terima langsung di showroom Madukoro."
+      "catatan": "Kota showroom. Unit display tersedia untuk dicoba langsung, termasuk mencoba AI Smart Cockpit dan ruang kursi belakang."
     },
     {
       "kota": "Ungaran",
-      "catatan": "Sekitar 30 menit dari dealer. Kunjungan sales ke rumah atau kantor atas permintaan."
+      "catatan": "Sekitar 30 menit. Test drive bisa diatur di rute tanjakan supaya terasa bedanya tenaga motor listrik."
     },
     {
       "kota": "Kendal",
-      "catatan": "Sekitar 45 menit dari dealer. Pengiriman unit sampai alamat setelah administrasi selesai."
+      "catatan": "Sekitar 45 menit. Unit demo dapat dibawa ke lokasi Anda untuk dicoba sebelum memutuskan."
     },
     {
       "kota": "Demak",
-      "catatan": "Sekitar 45 menit dari dealer. Konsultasi dan pengurusan dokumen dapat dilakukan jarak jauh."
+      "catatan": "Sekitar 45 menit. Perbandingan varian dan pilihan warna dibahas lebih dulu lewat foto dan video."
     },
     {
       "kota": "Salatiga",
-      "catatan": "Sekitar 1 jam dari dealer. Penjadwalan test drive menyesuaikan waktu kunjungan Anda."
+      "catatan": "Sekitar 1 jam. Jalur menanjak ke arah sini cocok untuk menguji respons pedal dan pengereman regeneratif."
     },
     {
       "kota": "Kudus",
-      "catatan": "Sekitar 1,5 jam dari dealer. Pengiriman unit dan pendampingan administrasi tersedia."
+      "catatan": "Sekitar 1,5 jam. Sesi test drive dijadwalkan sekalian, supaya satu kali datang bisa mencoba lebih dari satu model."
     },
     {
       "kota": "Surakarta (Solo)",
-      "catatan": "Sekitar 2 jam dari dealer. Melayani pemesanan luar kota dengan pengiriman sampai alamat."
+      "catatan": "Sekitar 2 jam. Penjelasan fitur dan spesifikasi lengkap dikirim lebih dulu agar kunjungan Anda efektif."
     },
     {
       "kota": "Magelang",
-      "catatan": "Sekitar 2 jam dari dealer. Konsultasi lewat WhatsApp, unit dikirim setelah unit siap."
+      "catatan": "Sekitar 2 jam. Konsultasi pemilihan model berdasarkan pemakaian harian dan jumlah penumpang."
     },
     {
       "kota": "Pekalongan",
-      "catatan": "Sekitar 2 jam dari dealer. Pemesanan jarak jauh dengan pengiriman unit ke alamat."
+      "catatan": "Sekitar 2 jam. Video detail eksterior dan interior unit nyata dikirim sebelum pemesanan."
     },
     {
       "kota": "Pati",
-      "catatan": "Sekitar 2 jam dari dealer. Pendampingan proses dari pemesanan sampai serah terima."
+      "catatan": "Sekitar 2 jam. Pertanyaan soal fitur, garansi, dan perawatan dijawab lengkap sebelum unit dipesan."
     }
   ],
   "faqUmum": [
