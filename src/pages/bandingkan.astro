@@ -1,0 +1,230 @@
+---
+/* =============================================================================
+   Bandingkan model.
+
+   KENAPA ADA: pertanyaan yang paling sering muncul bukan "apa spesifikasi J7",
+   melainkan "J7 atau J8, bagusnya yang mana". Halaman model menjawab satu
+   mobil sekaligus; tidak ada halaman yang menjajarkannya.
+
+   Semua angka diambil dari data yang sama dengan halaman model, jadi tidak ada
+   tabel kedua yang bisa tertinggal saat spesifikasi atau harga berubah.
+   ============================================================================ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../lib/site';
+import { getAllCars, teksHarga, punyaHarga, merek, labelStatus } from '../lib/cars';
+import { waLink, pesanPenawaran } from '../lib/whatsapp';
+
+const cars = getAllCars();
+const kota = site.address.locality;
+
+/* Baris tabel dibangun dari gabungan label `angka` yang ada di seluruh model,
+   bukan dari daftar yang ditulis tangan. Menambah model baru dengan angka
+   berbeda otomatis menambah barisnya, bukan diam-diam terlewat. */
+const labelAngka: string[] = [];
+for (const c of cars) {
+  for (const a of c.angka ?? []) {
+    if (!labelAngka.includes(a.label)) labelAngka.push(a.label);
+  }
+}
+const nilaiAngka = (slug: string, label: string) => {
+  const c = cars.find((x) => x.slug === slug);
+  const a = c?.angka?.find((x) => x.label === label);
+  return a ? `${a.nilai}${a.satuan ? ' ' + a.satuan : ''}` : '—';
+};
+
+const tenaga: Record<string, string> = {
+  ev: 'Listrik penuh',
+  phev: 'Hybrid plug-in',
+  ice: 'Bensin turbo',
+};
+
+const judul = 'Bandingkan Model OMODA & JAECOO';
+const deskripsi =
+  `Perbandingan ${cars.map((c) => c.namaPendek).join(', ')} berdampingan: ` +
+  `tenaga, jarak tempuh, kategori, dan harga OTR ${kota}. Dibantu ${site.salesName} memilih yang sesuai.`;
+
+const remah = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Beranda', item: new URL('/', Astro.site).href },
+    { '@type': 'ListItem', position: 2, name: 'Bandingkan Model', item: new URL('/bandingkan', Astro.site).href },
+  ],
+};
+
+const tanya: [string, string][] = [
+  [
+    'J7 SHS atau J8 SHS ARDIS, pilih yang mana?',
+    'Keduanya hybrid plug-in. J8 SHS ARDIS lebih besar, lebih bertenaga, dan berpenggerak ' +
+    'empat roda; J7 SHS lebih ringkas dan lebih murah. Kalau sering membawa penumpang penuh ' +
+    'atau keluar kota dengan muatan berat, selisihnya terasa. Untuk pemakaian harian berdua ' +
+    'atau bertiga, J7 SHS sudah lebih dari cukup.',
+  ],
+  [
+    'Listrik penuh atau hybrid?',
+    'Listrik penuh paling hemat biaya per kilometer dan paling senyap, tapi menuntut tempat ' +
+    'mengisi daya di rumah. Hybrid plug-in menghilangkan kekhawatiran itu: bisa berjalan ' +
+    'listrik untuk harian, dan tetap memakai bensin saat perjalanan jauh.',
+  ],
+  [
+    'Apa bedanya J8 ARDIS dan J8 SHS ARDIS?',
+    'J8 ARDIS memakai mesin bensin turbo, J8 SHS ARDIS memakai sistem hybrid plug-in. ' +
+    'Bodi dan kelasnya sama; yang berbeda cara menggerakkannya dan konsumsi bahan bakarnya.',
+  ],
+  [
+    'Masih bingung setelah melihat tabel ini?',
+    `Kirim saja pemakaian harian Anda ke ${site.salesName} lewat WhatsApp — jarak tempuh ` +
+    'per hari, jumlah penumpang biasanya, dan apakah ada tempat mengisi daya di rumah. ' +
+    'Dari tiga hal itu pilihannya biasanya mengerucut sendiri.',
+  ],
+];
+
+const faqSkema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: tanya.map(([q, a]) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
+};
+---
+
+<BaseLayout judul={judul} deskripsi={deskripsi} skema={[remah, faqSkema]}>
+  <section class="band-head">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Remah">
+        <a href="/">Beranda</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">Bandingkan Model</span>
+      </nav>
+      <p class="band-eyebrow">Bandingkan</p>
+      <h1 class="band-judul">Model OMODA &amp; JAECOO Berdampingan</h1>
+      <p class="band-lede">
+        Angka yang sama, ditata sejajar, supaya perbedaannya terlihat tanpa
+        berpindah-pindah halaman.
+      </p>
+    </div>
+  </section>
+
+  <section class="band-isi">
+    <div class="wrap">
+      <div class="tabel-bungkus">
+        <table class="tabel-band">
+          <thead>
+            <tr>
+              <th scope="col" class="sudut">Model</th>
+              {cars.map((c) => (
+                <th scope="col">
+                  <a href={`/mobil/${c.slug}`}>{c.namaPendek}</a>
+                  <span class="band-merek">{merek(c)}</span>
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Harga OTR {kota}</th>
+              {cars.map((c) => (
+                <td class="band-harga">
+                  {punyaHarga(c) ? teksHarga(c) : <span class="band-prebook">{labelStatus(c)}</span>}
+                </td>
+              ))}
+            </tr>
+            <tr>
+              <th scope="row">Penggerak</th>
+              {cars.map((c) => <td>{tenaga[c.powertrain] ?? '—'}</td>)}
+            </tr>
+            <tr>
+              <th scope="row">Kategori</th>
+              {cars.map((c) => <td>{c.kategori}</td>)}
+            </tr>
+            {labelAngka.map((label) => (
+              <tr>
+                <th scope="row">{label}</th>
+                {cars.map((c) => <td>{nilaiAngka(c.slug, label)}</td>)}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <p class="band-catatan">
+        Tanda &mdash; berarti angka itu tidak berlaku untuk model tersebut, bukan nol.
+        Spesifikasi lengkap tiap model ada di halaman modelnya masing-masing.
+      </p>
+
+      <h2>Pertanyaan saat memilih</h2>
+      {tanya.map(([q, a]) => (
+        <details class="faq">
+          <summary>{q}</summary>
+          <p>{a}</p>
+        </details>
+      ))}
+
+      <div class="band-cta">
+        <a class="btn btn--dark" href={waLink(pesanPenawaran())} target="_blank" rel="noopener">
+          Minta bantuan memilih
+        </a>
+        <a class="btn btn--ghost" href="/#lineup">Lihat semua model</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .band-head { padding: 112px 0 28px; background: var(--mist); }
+  .crumbs { display: flex; flex-wrap: wrap; gap: 8px; font-size: 13px; color: #7c7676; margin-bottom: 18px; }
+  .crumbs a { color: #7c7676; }
+  .crumbs a:hover { color: var(--ink); }
+
+  .band-eyebrow {
+    font-family: var(--display); font-weight: 600; font-size: 12px;
+    letter-spacing: .18em; text-transform: uppercase; color: var(--accent);
+  }
+  .band-judul {
+    margin-top: 8px;
+    font-family: var(--display); font-weight: 700;
+    font-size: clamp(28px, 6.5vw, 44px); letter-spacing: .02em; line-height: 1.1;
+  }
+  .band-lede { margin-top: 12px; font-size: 17px; color: #4a4a4a; line-height: 1.6; max-width: 56ch; }
+
+  .band-isi { padding: 36px 0 72px; }
+
+  /* Tabel perbandingan memang lebar; hanya wadahnya yang menggulir,
+     badan halaman tidak. */
+  .tabel-bungkus { overflow-x: auto; }
+  .tabel-band { border-collapse: collapse; min-width: 44rem; width: 100%; }
+  .tabel-band th, .tabel-band td {
+    text-align: left; padding: 13px 14px 13px 0;
+    border-bottom: 1px solid var(--line); vertical-align: baseline;
+  }
+  .tabel-band thead th a {
+    font-family: var(--display); font-weight: 700; font-size: 15px; color: inherit;
+  }
+  .tabel-band thead th a:hover { color: var(--accent); }
+  .band-merek {
+    display: block; margin-top: 2px; font-size: 10px; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--accent);
+  }
+  .tabel-band tbody th {
+    font-family: var(--body); font-weight: 600; font-size: 13px; color: #7c7676;
+    white-space: nowrap;
+  }
+  .tabel-band tbody td { font-size: 14px; color: #3f3f3f; }
+  .band-harga { font-family: var(--display); font-weight: 700; font-size: 15px; color: var(--ink); white-space: nowrap; }
+  .band-prebook { font-family: var(--body); font-weight: 600; font-size: 13px; color: var(--accent); }
+  .sudut { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: #7c7676; }
+
+  .band-catatan { margin-top: 14px; font-size: 13px; color: #7c7676; line-height: 1.6; max-width: 60ch; }
+
+  .band-isi h2 {
+    margin-top: 40px; margin-bottom: 10px;
+    font-family: var(--display); font-weight: 700; font-size: 21px; letter-spacing: .02em;
+  }
+  .band-cta { margin-top: 36px; display: flex; flex-wrap: wrap; gap: 12px; }
+
+  @media (min-width: 48rem) {
+    .band-head { padding-top: 140px; }
+  }
+</style>
